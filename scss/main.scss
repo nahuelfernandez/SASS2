@@ -1,0 +1,27 @@
+$breakpoints: (
+  mobile: 240px,
+  tablet: 600px,
+  desktop: 1024px  
+);
+@mixin breakpoint($device) {
+  
+    @if map-has-key($breakpoints, $device) {
+      @media (min-width: #{map-get($breakpoints, $device)}) {
+        @content;
+      }
+    } @else {
+      @warn "Desafortunadamente el valor #{$device} es desconocido.";
+    } 
+  }
+
+  body {
+    @include breakpoint(mobile) {
+      background-color: yellow;
+    }  
+    @include breakpoint(tablet) {
+      background-color: blue;
+    }  
+    @include breakpoint(desktop) {
+      background-color: red;
+    }
+  }

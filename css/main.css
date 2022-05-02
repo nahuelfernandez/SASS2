@@ -1,0 +1,11 @@
+@media (min-width: 240px) {
+  body {
+    background-color: yellow; } }
+
+@media (min-width: 600px) {
+  body {
+    background-color: blue; } }
+
+@media (min-width: 1024px) {
+  body {
+    background-color: red; } }
